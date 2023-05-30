@@ -33,7 +33,7 @@ GET  https://altar.berrysauce.me/generate?data=example
 2. Install all dependencies with `pip install -r requirements.txt`
 3. Run `main.py` with `python main.py`
 
-> **Note**: Altar is built with Python 3.9.x, but should work with any Python 3 version.
+> **Note**: Altar is built with Python 3.9.x, but should work with any Python version above 3.6
 
 ## License
 Altar is licensed under the MIT license.
