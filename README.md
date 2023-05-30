@@ -17,7 +17,7 @@ GET  https://altar.berrysauce.me/generate?data=example
 
 > **Warning**: Altar is just a small project, therefore security cannot always be guaranteed. We recommend to only pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
 
-### ⚙️ Settings
+### Settings
 
 | Query    | Type    | Description                                                             | Required |
 | :------- |:--------|:------------------------------------------------------------------------| :--------|
