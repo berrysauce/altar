@@ -17,6 +17,14 @@ GET  https://altar.berrysauce.me/generate?data=example
 
 > **Warning**: Altar is just a small project, therefore security cannot always be guaranteed. We recommend to only pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
 
+### ⚙️ Settings
+
+| Query    | Type    | Description                                                             | Required |
+| :------- |:--------|:------------------------------------------------------------------------| :--------|
+| `data`   | String  | Data to be used for identicon generation                                | yes ⚠️    |
+| `color`  | String  | Color to be usef for the identicon (defualt: generated based on input)  | no       |
+| `size`   | Integer | Width & Height of the scaled SVG (defualt: 250)                         | no       |
+
 ## License
 Altar is licensed under the MIT license.
 
