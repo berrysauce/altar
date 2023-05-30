@@ -8,8 +8,8 @@ This means that you can use Altar to generate profile pictures for users based o
 Altar was built from the ground up with few dependencies, but is inspired from GitHub's Identicons and [minidenticons](https://github.com/laurentpayot/minidenticons).
 
 ## Installation
-- **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`.
-- **Cloud** – run your own instance of Altar in the Deta Cloud (https://deta.space/discovery/@berrysauce/altar).
+- **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
+- **Cloud** – run your own instance of Altar in the Deta Cloud (https://deta.space/discovery/@berrysauce/altar)
 
 ## How to use
 An API request to Altar only requires the data you want to use to generate the identicon. There are overrides (e.g. for the file size and color) which can be found in the documentation.
