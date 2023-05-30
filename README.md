@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/berrysauce/altar/master/templates/assets/img/altar-identicons.svg" alt="altar spelled in identicons" height=64>
 
 # altar
-Altar is a tiny API for the generation of identicons (Wikipedia). Altar always generates the same image from the same input through hashing and simple calculations.
+Altar is a tiny API for the generation of identicons ((Wikipedia)[https://en.wikipedia.org/wiki/Identicon]). Altar always generates the same image from the same input through hashing and simple calculations.
 
 This means that you can use Altar to generate profile pictures for users based on their username, or any other unique identifier.
 
