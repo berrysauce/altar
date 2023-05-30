@@ -5,7 +5,7 @@ Altar is a tiny API for the generation of identicons (Wikipedia). Altar always g
 
 This means that you can use Altar to generate profile pictures for users based on their username, or any other unique identifier.
 
-Altar was built from the ground up with few dependencies, but is inspired from GitHub's Identicons and minidenticons.
+Altar was built from the ground up with few dependencies, but is inspired from GitHub's Identicons and [minidenticons](https://github.com/laurentpayot/minidenticons).
 
 ## Installation
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`.
