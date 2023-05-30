@@ -25,11 +25,15 @@ GET  https://altar.berrysauce.me/generate?data=example
 | Query    | Type    | Description                                                             | Required |
 | :------- |:--------|:------------------------------------------------------------------------| :--------|
 | `data`   | String  | Data to be used for identicon generation                                | yes ⚠️    |
-| `color`  | String  | Color to be usef for the identicon (defualt: generated based on input)  | no       |
-| `size`   | Integer | Width & Height of the scaled SVG (defualt: 250)                         | no       |
+| `color`  | String  | Color to be used for the identicon (default: generated based on input)  | no       |
+| `size`   | Integer | Width & Height of the scaled SVG (default: 250)                         | no       |
 
 ## Development
-More on that soon!
+1. Install Altar wherever Python is supported by cloning the repository
+2. Install all dependencies with `pip install -r requirements.txt`
+3. Run `main.py` with `python main.py`
+
+> **Note**: Altar is built with Python 3.9.x, but should work with any Python 3 version.
 
 ## License
 Altar is licensed under the MIT license.
