@@ -42,7 +42,8 @@ def get_index(request: Request):
 def get_docs():
     # 301 - moved permanently
     # 302 - moved temporarily
-    return RedirectResponse("https://docs.altar.berrysauce.me", status_code=301)
+    # redirecting to GitHub for now, maybe I'll make a docs site later
+    return RedirectResponse("https://github.com/berrysauce/altar/blob/master/README.md#settings", status_code=302)
 
 @app.get("/generate")
 def get_identicon(data: str, color: Union[str, None] = None, size: Union[int, int] = 250):
@@ -109,7 +110,7 @@ def get_identicon(data: str, color: Union[str, None] = None, size: Union[int, in
     # credits to ChatGPT lol, didn't know this existed
     dwg = svgwrite.Drawing("identicon.svg", profile="tiny")
     
-    # Size of each identicon cell
+    # Size of each identicon cell (e.g. 250 / 5 = 50)
     cell_size = size / usable_grid_size[0]
     
     # iterate through y
