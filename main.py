@@ -1,5 +1,5 @@
 import uvicorn
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI, Request, Response, HTTPException
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -46,7 +46,7 @@ def get_docs():
     return RedirectResponse("https://github.com/berrysauce/altar/blob/master/README.md#settings", status_code=302)
 
 @app.get("/generate")
-def get_identicon(data: str, color: Union[str, None] = None, size: Union[int, int] = 250):
+def get_identicon(data: str, color: Union[str, None] = None, background: Union[str, None] = None, size: Union[int, int] = 250):
     binarized = binarize(data)
 
     color_data = binarized[:58] # Trim to 58 bits
@@ -83,7 +83,7 @@ def get_identicon(data: str, color: Union[str, None] = None, size: Union[int, in
         
     else:
         color = "#" + color    
-    
+        
     fields = []
     
     for i in range(66):
@@ -110,6 +110,19 @@ def get_identicon(data: str, color: Union[str, None] = None, size: Union[int, in
     # credits to ChatGPT lol, didn't know this existed
     dwg = svgwrite.Drawing("identicon.svg", profile="tiny")
     
+    if background != None:
+        if background == "light":
+            background = "#ffffff"
+        elif background == "dark":
+            background = "#212121"
+        else:
+            background = "#" + background
+            
+        try:
+            dwg.add(dwg.rect((0, 0), (size, size), fill=background)) # fill background
+        except TypeError:
+            raise HTTPException(status_code=400, detail="Invalid background color – only pass on HEX colors without the '#' prefix or 'light'/'dark'")
+    
     # Size of each identicon cell (e.g. 250 / 5 = 50)
     cell_size = size / usable_grid_size[0]
     
@@ -126,7 +139,10 @@ def get_identicon(data: str, color: Union[str, None] = None, size: Union[int, in
                 y = i * cell_size
 
                 # Draw cell rectangle with the assigned color
-                dwg.add(dwg.rect((x, y), (cell_size, cell_size), fill=color))
+                try:
+                    dwg.add(dwg.rect((x, y), (cell_size, cell_size), fill=color))
+                except TypeError:
+                    raise HTTPException(status_code=400, detail="Invalid fill color – only pass on HEX colors without the '#' prefix")
             else:
                 pass # pass instead of continue because continue would skip the row_list appending
             
@@ -146,7 +162,10 @@ def get_identicon(data: str, color: Union[str, None] = None, size: Union[int, in
                 y = i * cell_size
 
                 # Draw cell rectangle with the assigned color
-                dwg.add(dwg.rect((x, y), (cell_size, cell_size), fill=color))
+                try:
+                    dwg.add(dwg.rect((x, y), (cell_size, cell_size), fill=color))
+                except TypeError:
+                    raise HTTPException(status_code=400, detail="Invalid fill color – only pass on HEX colors without the '#' prefix")
             else:
                 pass # pass instead of continue because continue would skip the index increment
             row_list_index += 1
