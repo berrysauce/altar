@@ -7,6 +7,8 @@ This means that you can use Altar to generate profile pictures for users based o
 
 Altar was built from the ground up with few dependencies, but is inspired from GitHub's Identicons and [minidenticons](https://github.com/laurentpayot/minidenticons).
 
+Due to its small size, Altar is very fast. Local Waiting / Local Time To First Byte times are usually bewteen 3-4 ms.
+
 ## Installation
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
 - **Cloud** – run your own instance of Altar in the Deta Cloud (https://deta.space/discovery/@berrysauce/altar)
