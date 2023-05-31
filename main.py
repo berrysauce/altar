@@ -12,6 +12,14 @@ templates = Jinja2Templates(directory="templates")
 
 app.mount("/assets", StaticFiles(directory="templates/assets"), name="assets")
 
+# NOTE
+#
+# I've tried to add as many comments as possible to explain the way Altar generates identicons.
+# I hope they'll help you with figuring it out yourself or just understanding the code.
+#
+# For transparency reasons: 
+# ChatGPT actually helped me especially with the color generation. The majority is built from the ground up though.
+
 
 # - FUNCTIONS - #
 
@@ -64,7 +72,7 @@ def get_identicon(data: str, color: Union[str, None] = None, background: Union[s
         }
         
         # get the first 6 bits of the color data
-        color_data_segment = color_data[:6]
+        color_data_segment = color_data[:segment_length]
         
         # Convert the segment from binary to decimal
         decimal_value = int(color_data_segment, 2)
@@ -73,6 +81,9 @@ def get_identicon(data: str, color: Union[str, None] = None, background: Union[s
         hash_value = hashlib.md5(str(decimal_value).encode()).hexdigest()
         
         # Convert the hash value to an integer
+        # thanks again ChatGPT! This conversion introduces a lot of randomness as the hash integer is quite large
+        # the line below (hash_integer % len(color_map)) devides the hash integer by the length of the color map (in this case 5)
+        # and returns the remainder, which is then used as the index for the color map
         hash_integer = int(hash_value, 16)
         
         # Map the integer value to an index within the range of available colors
