@@ -22,11 +22,12 @@ GET  https://altar.berrysauce.me/generate?data=example
 
 ### Settings
 
-| Query    | Type    | Description                                                             | Required |
-| :------- |:--------|:------------------------------------------------------------------------| :--------|
-| `data`   | String  | Data to be used for identicon generation                                | yes ⚠️    |
-| `color`  | String  | Color to be used for the identicon (default: generated based on input)  | no       |
-| `size`   | Integer | Width & Height of the scaled SVG (default: 250)                         | no       |
+| Query         | Type    | Description                                                                            | Required |
+| :-------------|:--------|:---------------------------------------------------------------------------------------| :--------|
+| `data`        | String  | Data to be used for identicon generation                                               | yes ⚠️    |
+| `color`       | String  | HEX Color to be used for the identicon without '#' (default: generated based on input) | no       |
+| `background`  | String  | HEX Color to be used for the identicon without '#' prefix (default: none/transparent)  | no       |
+| `size`        | Integer | Width & Height of the scaled SVG (default: 250)                                        | no       |
 
 ## Development
 1. Install Altar wherever Python is supported by cloning the repository
