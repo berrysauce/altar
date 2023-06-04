@@ -54,7 +54,12 @@ def get_docs():
     return RedirectResponse("https://github.com/berrysauce/altar/blob/master/README.md#settings", status_code=302)
 
 @app.get("/generate")
-def get_identicon(data: str, color: Union[str, None] = None, background: Union[str, None] = None, size: Union[int, int] = 250):
+def get_identicon(
+    data: str, 
+    color: Union[str, None] = None, 
+    background: Union[str, None] = None, 
+    size: Union[int, int] = 250
+    ):
     binarized = binarize(data)
 
     color_data = binarized[:58] # Trim to 58 bits
