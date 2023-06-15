@@ -20,6 +20,12 @@ An API request to Altar only requires the data you want to use to generate the i
 GET  https://altar.berrysauce.me/generate?data=example
 ```
 
+Altar currently has two public endpoints:
+- **Origin:** https://altar.berrysauce.me
+- **🚀 CDN:** https://altarcdn.berrysauce.me/
+
+As Altar always generates the same image based on your input, it's recommendet to use the CDN endpoint for better performance.
+
 > **Warning**: Altar is just a small project, therefore security cannot always be guaranteed. We recommend to only pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
 
 ### Settings
