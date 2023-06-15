@@ -22,7 +22,7 @@ GET  https://altar.berrysauce.me/generate?data=example
 
 Altar currently has two public endpoints:
 - **Origin:** https://altar.berrysauce.me
-- **🚀 CDN:** https://altarcdn.berrysauce.me/
+- **🚀 CDN:** https://altarcdn.berrysauce.me
 
 As Altar always generates the same image based on your input, it's recommendet to use the CDN endpoint for better performance.
 
