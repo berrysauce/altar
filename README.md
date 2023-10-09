@@ -24,9 +24,11 @@ Altar currently has two public endpoints:
 - **Origin:** https://altar.berrysauce.me
 - **🚀 CDN:** https://altarcdn.berrysauce.me
 
-As Altar always generates the same image based on your input, it's recommendet to use the CDN endpoint for better performance.
+> [!NOTE]  
+> As Altar always generates the same image based on your input, it's recommendet to use the CDN endpoint for better performance.
 
-> **Warning**: Altar is just a small project, therefore security cannot always be guaranteed. We recommend to only pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
+> [!WARNING]  
+> Altar is just a small project, therefore security cannot always be guaranteed. We recommend to only pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
 
 ### Settings
 
@@ -42,7 +44,8 @@ As Altar always generates the same image based on your input, it's recommendet t
 2. Install all dependencies with `pip install -r requirements.txt`
 3. Run `main.py` with `python main.py`
 
-> **Note**: Altar is built with Python 3.9.x, but should work with any Python version above 3.6
+> [!NOTE]
+> Altar is built with Python 3.9.x, but should work with any Python version above 3.6
 
 ## License
 Altar is licensed under the MIT license.
