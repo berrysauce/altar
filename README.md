@@ -35,8 +35,8 @@ Altar currently has two public endpoints:
 | Query         | Type    | Description                                                                            | Required |
 | :-------------|:--------|:---------------------------------------------------------------------------------------| :--------|
 | `data`        | String  | Data to be used for identicon generation                                               | yes ⚠️    |
-| `color`       | String  | HEX Color to be used for the identicon without '#' (default: generated based on input) | no       |
-| `background`  | String  | HEX Color to be used for the identicon without '#' prefix (default: none/transparent)  | no       |
+| `color`       | String  | HEX Color to be used for the identicon foreground without '#' (default: generated based on input) | no       |
+| `background`  | String  | HEX Color to be used for the identicon background without '#' prefix (default: none/transparent)  | no       |
 | `size`        | Integer | Width & Height of the scaled SVG (default: 250)                                        | no       |
 
 ## Development
