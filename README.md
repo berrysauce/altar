@@ -42,9 +42,9 @@ Altar currently has two public endpoints:
 
 ### Headers
 
-| Header        | Type    | Description                                                                            | Required |
-| :-------------|:--------|:---------------------------------------------------------------------------------------| :--------|
-| `x-api-key`   | String  | API Key for authentication, if it was set as an environment variable.                  | no       |
+| Header        | Type    | Description                                                                            | Required              |
+| :-------------|:--------|:---------------------------------------------------------------------------------------| :---------------------|
+| `x-api-key`   | String  | API Key for authentication, if it was set as an environment variable.                  | no (if set, yes  ⚠️)      |
 
 ### Query Parameters
 
