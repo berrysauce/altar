@@ -1,16 +1,14 @@
-import uvicorn
 from fastapi import FastAPI, Request, Response, HTTPException
 from fastapi.responses import RedirectResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 from typing import Union
 import hashlib
 import svgwrite
 
-app = FastAPI(docs_url=None, redoc_url=None, openapi_url="/openapi")
-templates = Jinja2Templates(directory="templates")
-
-app.mount("/assets", StaticFiles(directory="templates/assets"), name="assets")
+app = FastAPI(
+    docs_url=None,
+    redoc_url=None,
+    openapi_url="/openapi"
+)
 
 # NOTE
 #
@@ -44,21 +42,14 @@ def binarize(string: str):
 
 @app.get("/")
 def get_index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
-
-@app.get("/docs")
-def get_docs():
-    # 301 - moved permanently
-    # 302 - moved temporarily
-    # redirecting to GitHub for now, maybe I'll make a docs site later
-    return RedirectResponse("https://github.com/berrysauce/altar/blob/master/README.md#settings", status_code=302)
+    return {"detail": "Altar Identicon"}
 
 @app.get("/generate")
 def get_identicon(
-    data: str, 
-    color: Union[str, None] = None, 
-    background: Union[str, None] = None, 
-    size: Union[int, int] = 250
+        data: str, 
+        color: Union[str, None] = None, 
+        background: Union[str, None] = None, 
+        size: Union[int, int] = 250
     ):
     binarized = binarize(data)
 
@@ -69,11 +60,11 @@ def get_identicon(
         segment_length = 6  # Length of each segment
         
         color_map = {
-            0: "#5bc0eb", # blue - my fav :)
-            1: "#fde74c", # yellow
-            2: "#9bc53d", # green
-            3: "#e55934", # red
-            4: "#fa7921"  # orange
+            0: "#126ce2", # blue - my fav :)
+            1: "#f7ce00", # yellow
+            2: "#2cce1a", # green
+            3: "#d63128", # red
+            4: "#ed5204"  # orange
         }
         
         # get the first 6 bits of the color data
@@ -196,4 +187,5 @@ def get_identicon(
 # - RUNNER - #
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+    import uvicorn
+    uvicorn.run(app)

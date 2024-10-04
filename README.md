@@ -11,7 +11,7 @@ Due to its small size, Altar is very fast. Local Waiting / Local Time To First B
 
 ## Installation
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
-- **Cloud** – run your own instance of Altar in the Deta Cloud (https://deta.space/discovery/@berrysauce/altar)
+- **Cloud** – run your own instance of Altar on Vercel (instructions following soon)
 
 ## How to use
 An API request to Altar only requires the data you want to use to generate the identicon. There are overrides (e.g. for the file size and color) which can be found in the documentation.
