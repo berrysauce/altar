@@ -13,7 +13,7 @@ Due to its small size, Altar is very fast. Local Waiting / Local Time To First B
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
 - **Cloud** – run your own instance of Altar on Vercel. Just click the button below and you'll be guided through the setup.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar&env=API_KEY&envDescription=(optional)%20Configure%20an%20API%20key%20to%20limit%20who%20can%20access%20the%20API&envLink=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar%3Ftab%3Dreadme-ov-file%23installation&project-name=altar&repository-name=altar&demo-title=Altar%20Demo&demo-description=A%20site%20using%20altar%20to%20dynamically%20generate%20identicons.&demo-url=https%3A%2F%2Fberrysauce.me%2Faltar%2F)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar&project-name=altar&repository-name=altar&demo-title=Altar%20Demo&demo-description=A%20site%20using%20altar%20to%20dynamically%20generate%20identicons.&demo-url=https%3A%2F%2Fberrysauce.me%2Faltar%2F)
 
 ### 🔐 Restrict Access
 It is possible to restrict the access to your Altar instance. To do that, simply create a `.env` file in the directory where Altar is and add `API_KEY` as a variable. 
