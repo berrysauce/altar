@@ -13,7 +13,17 @@ Due to its small size, Altar is very fast. Local Waiting / Local Time To First B
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
 - **Cloud** – run your own instance of Altar on Vercel (instructions following soon)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar&project-name=altar&repository-name=altar&demo-title=Altar%20Demo&demo-description=The%20public%20Altar%20instance&demo-url=https%3A%2F%2Fberrysauce.me%2Faltar%2F)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar&env=API_KEY&envDescription=(optional)%20Configure%20an%20API%20key%20to%20limit%20who%20can%20access%20the%20API&envLink=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar%3Ftab%3Dreadme-ov-file%23installation&project-name=altar&repository-name=altar&demo-title=Altar%20Demo&demo-description=A%20site%20using%20altar%20to%20dynamically%20generate%20identicons.&demo-url=https%3A%2F%2Fberrysauce.me%2Faltar%2F)
+
+To deploy your own instance of Altar on Vercel, just click the button above and you'll be guided through the setup. To run Altar locally, follow the steps from [Development](#development).
+
+### 🔐 Restrict Access
+It is possible to restrict the access to your Altar instance. To do that, simply create a `.env` file in the directory where Altar is and add `API_KEY` as a variable. 
+
+If you're hosting Altar on Vercel, go to Settings → Environment Variables and add `API_KEY` there. Choose a key for your Altar instance and set it as the value of the environment variable.
+
+To make authenticated requests to Altar, use the `x-api-key` HTTP header with the `API_KEY` as the value.
+
 
 ## How to use
 An API request to Altar only requires the data you want to use to generate the identicon. There are overrides (e.g. for the file size and color) which can be found in the documentation.
