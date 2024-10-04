@@ -13,6 +13,8 @@ Due to its small size, Altar is very fast. Local Waiting / Local Time To First B
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
 - **Cloud** – run your own instance of Altar on Vercel (instructions following soon)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar&project-name=altar&repository-name=altar&demo-title=Altar%20Demo&demo-description=The%20public%20Altar%20instance&demo-url=https%3A%2F%2Fberrysauce.me%2Faltar%2F)
+
 ## How to use
 An API request to Altar only requires the data you want to use to generate the identicon. There are overrides (e.g. for the file size and color) which can be found in the documentation.
 
