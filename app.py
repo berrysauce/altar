@@ -81,6 +81,7 @@ def get_identicon(
         color: Union[str, None] = None, 
         background: Union[str, None] = None, 
         size: Union[int, int] = 250,
+        padding: Union[int, int] = 0,
         api_key: str = Security(get_api_key)
     ):
     binarized = binarize(data)
@@ -147,7 +148,8 @@ def get_identicon(
     usable_grid_size = [5, 5, 3]
     
     # credits to ChatGPT lol, didn't know this existed
-    dwg = svgwrite.Drawing("identicon.svg", profile="tiny")
+    total_size = size + 2 * padding
+    dwg = svgwrite.Drawing("identicon.svg", size= (total_size, total_size), profile="tiny")
     
     if background != None:
         if background == "light":
@@ -158,7 +160,7 @@ def get_identicon(
             background = "#" + background
             
         try:
-            dwg.add(dwg.rect((0, 0), (size, size), fill=background)) # fill background
+            dwg.add(dwg.rect((0, 0), (total_size, total_size), fill=background)) # fill background
         except TypeError:
             raise HTTPException(status_code=400, detail="Invalid background color – only pass on HEX colors without the '#' prefix or 'light'/'dark'")
     
@@ -174,8 +176,8 @@ def get_identicon(
             # i (row) * x (size, e.g. 11) + j (column index) -> list index
             if field_fill[i*usable_grid_size[2]+j] == True:
                 # Calculate cell position
-                x = j * cell_size
-                y = i * cell_size
+                x = j * cell_size + padding
+                y = i * cell_size + padding
 
                 # Draw cell rectangle with the assigned color
                 try:
@@ -197,8 +199,9 @@ def get_identicon(
         for k in row_list_reversed:
             if k == True:
                 # Calculate cell position
-                x = (row_list_index + usable_grid_size[2]) * cell_size
-                y = i * cell_size
+                # Translate by padding
+                x = (row_list_index + usable_grid_size[2]) * cell_size + padding
+                y = i * cell_size + padding
 
                 # Draw cell rectangle with the assigned color
                 try:

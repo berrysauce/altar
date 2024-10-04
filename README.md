@@ -48,6 +48,7 @@ Altar currently has two public endpoints:
 | `color`       | String  | HEX Color to be used for the identicon foreground without '#' (default: generated based on input) | no       |
 | `background`  | String  | HEX Color to be used for the identicon background without '#' prefix (default: none/transparent)  | no       |
 | `size`        | Integer | Width & Height of the scaled SVG (default: 250)                                        | no       |
+| `padding`     | Integer | Padding for the identicon (default: 0)                                        | no       |
 
 ## Development
 1. Install Altar wherever Python is supported by cloning the repository
