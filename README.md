@@ -40,7 +40,13 @@ Altar currently has two public endpoints:
 > [!WARNING]  
 > Altar is just a small project, therefore security cannot always be guaranteed. It's only recommended to pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
 
-### Settings
+### Headers
+
+| Header        | Type    | Description                                                                            | Required |
+| :-------------|:--------|:---------------------------------------------------------------------------------------| :--------|
+| `x-api-key`   | String  | API Key for authentication, if it was set as an environment variable.                  | no       |
+
+### Query Parameters
 
 | Query         | Type    | Description                                                                            | Required |
 | :-------------|:--------|:---------------------------------------------------------------------------------------| :--------|
@@ -48,7 +54,7 @@ Altar currently has two public endpoints:
 | `color`       | String  | HEX Color to be used for the identicon foreground without '#' (default: generated based on input) | no       |
 | `background`  | String  | HEX Color to be used for the identicon background without '#' prefix (default: none/transparent)  | no       |
 | `size`        | Integer | Width & Height of the scaled SVG (default: 250)                                        | no       |
-| `padding`     | Integer | Padding for the identicon (default: 0)                                        | no       |
+| `padding`     | Integer | Padding for the identicon (default: 0)                                                 | no       |
 
 ## Development
 1. Install Altar wherever Python is supported by cloning the repository
