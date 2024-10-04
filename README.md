@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/berrysauce/altar/master/templates/assets/img/altar-identicons.svg" alt="altar spelled in identicons" height=64>
+<img src="https://berrysauce.me/altar/assets/img/default.webp" alt="Altar icon" height=64>
 
 # Altar
 Altar is a tiny API for the generation of identicons ([Wikipedia](https://en.wikipedia.org/wiki/Identicon)). Altar always generates the same image from the same input through hashing and simple calculations.
@@ -11,11 +11,9 @@ Due to its small size, Altar is very fast. Local Waiting / Local Time To First B
 
 ## Installation
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
-- **Cloud** – run your own instance of Altar on Vercel (instructions following soon)
+- **Cloud** – run your own instance of Altar on Vercel. Just click the button below and you'll be guided through the setup.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar&env=API_KEY&envDescription=(optional)%20Configure%20an%20API%20key%20to%20limit%20who%20can%20access%20the%20API&envLink=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar%3Ftab%3Dreadme-ov-file%23installation&project-name=altar&repository-name=altar&demo-title=Altar%20Demo&demo-description=A%20site%20using%20altar%20to%20dynamically%20generate%20identicons.&demo-url=https%3A%2F%2Fberrysauce.me%2Faltar%2F)
-
-To deploy your own instance of Altar on Vercel, just click the button above and you'll be guided through the setup. To run Altar locally, follow the steps from [Development](#development).
 
 ### 🔐 Restrict Access
 It is possible to restrict the access to your Altar instance. To do that, simply create a `.env` file in the directory where Altar is and add `API_KEY` as a variable. 
@@ -40,7 +38,7 @@ Altar currently has two public endpoints:
 > As Altar always generates the same image based on your input, it's recommendet to use the CDN endpoint for better performance.
 
 > [!WARNING]  
-> Altar is just a small project, therefore security cannot always be guaranteed. We recommend to only pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
+> Altar is just a small project, therefore security cannot always be guaranteed. It's only recommended to pass on usernames or unique identifiers to Altar, which do not include or grant access to personal information.
 
 ### Settings
 
