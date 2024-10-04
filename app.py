@@ -1,9 +1,14 @@
-from fastapi import FastAPI, Request, Response, HTTPException
+from fastapi import FastAPI, Request, Response, HTTPException, Security, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import RedirectResponse
+from fastapi.security import APIKeyHeader
+from dotenv import load_dotenv
 from typing import Union
 import svgwrite
 import hashlib
+import os
+
+load_dotenv()
+API_KEY = os.getenv("API_KEY") # API key (optional)
 
 app = FastAPI(
     docs_url=None,
@@ -18,6 +23,23 @@ app.add_middleware(
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
+api_key_header = APIKeyHeader(name="x-api-key", auto_error=False)
+
+def get_api_key(
+    api_key_header: str = Security(api_key_header),
+) -> str:
+    if API_KEY:
+        if api_key_header == API_KEY:
+            return api_key_header
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid or missing API Key",
+            )
+    else:
+        return None
+
 
 # NOTE
 #
@@ -51,14 +73,15 @@ def binarize(string: str):
 
 @app.get("/")
 def get_index(request: Request):
-    return {"detail": "Altar Identicon"}
+    return {"detail": "Altar Identicon API"}
 
 @app.get("/generate")
 def get_identicon(
         data: str, 
         color: Union[str, None] = None, 
         background: Union[str, None] = None, 
-        size: Union[int, int] = 250
+        size: Union[int, int] = 250,
+        api_key: str = Security(get_api_key)
     ):
     binarized = binarize(data)
 
