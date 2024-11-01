@@ -1,4 +1,4 @@
-<img src="https://berrysauce.me/altar/assets/img/default.webp" alt="Altar icon" height=64>
+<img src="https://berrysauce.dev/altar/assets/img/default.webp" alt="Altar icon" height=64>
 
 # Altar
 Altar is a tiny API for the generation of identicons ([Wikipedia](https://en.wikipedia.org/wiki/Identicon)). Altar always generates the same image from the same input through hashing and simple calculations.
@@ -27,12 +27,12 @@ To make authenticated requests to Altar, use the `x-api-key` HTTP header with th
 An API request to Altar only requires the data you want to use to generate the identicon. There are overrides (e.g. for the file size and color) which can be found in the documentation.
 
 ```http
-GET  https://altar.berrysauce.me/generate?data=example
+GET  https://altar.berrysauce.dev/generate?data=example
 ```
 
 Altar currently has two public endpoints:
-- **Origin:** https://altar.berrysauce.me
-- **🚀 CDN:** https://altarcdn.berrysauce.me
+- **Origin:** https://altar.berrysauce.dev
+- **🚀 CDN:** https://altarcdn.berrysauce.dev
 
 > [!NOTE]  
 > As Altar always generates the same image based on your input, it's recommendet to use the CDN endpoint for better performance.
