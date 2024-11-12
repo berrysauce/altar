@@ -30,6 +30,8 @@ An API request to Altar only requires the data you want to use to generate the i
 GET  https://altar.berrysauce.dev/generate?data=example
 ```
 
+![Uptime](https://uptime.berrysauce.dev/api/badge/9/uptime)
+
 Altar currently has two public endpoints:
 - **Origin:** https://altar.berrysauce.dev
 - **🚀 CDN:** https://altarcdn.berrysauce.dev
