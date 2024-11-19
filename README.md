@@ -11,9 +11,9 @@ Due to its small size, Altar is very fast. Local Waiting / Local Time To First B
 
 ## Installation
 - **Locally** – install Altar wherever Python is supported by cloning the repository, installing all dependencies with `pip install -r requirements.txt` and running `main.py`
-- **Cloud** – run your own instance of Altar on Vercel. Just click the button below and you'll be guided through the setup.
+- **Cloud** – run your own instance of Altar on Railway. Just click the button below and you'll be guided through the setup.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fberrysauce%2Faltar&project-name=altar&repository-name=altar&demo-title=Altar%20Demo&demo-description=A%20site%20using%20altar%20to%20dynamically%20generate%20identicons.&demo-url=https%3A%2F%2Fberrysauce.me%2Faltar%2F)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/acMcnw?referralCode=xKqS3I)
 
 ### 🔐 Restrict Access
 It is possible to restrict the access to your Altar instance. To do that, simply create a `.env` file in the directory where Altar is and add `API_KEY` as a variable. 
